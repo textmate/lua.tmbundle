@@ -6,14 +6,11 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
-TM_LUAC = ENV['TM_LUAC'] || (ENV['TM_LUA'] ? "#{ENV['TM_LUA']}c" : "luac")
 
 require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
 
-TextMate.require_cmd "#{TM_LUAC}"
-
-puts "using #{TM_LUAC}"
-result = `"#{TM_LUAC}" -p - 2&gt;&amp;1`
+puts "using ${TM_LUAC:-luac}"
+result = `"${TM_LUAC:-luac}" -p - 2&gt;&amp;1`
 puts result
 
 regexp = /^luac: stdin:(\d+):/
@@ -26,15 +23,37 @@ end
 </string>
 	<key>input</key>
 	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^V</string>
 	<key>name</key>
 	<string>Check Syntax</string>
-	<key>output</key>
-	<string>showAsTooltip</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>luac</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/luac</string>
+				<string>/usr/local/bin/luac</string>
+			</array>
+			<key>variable</key>
+			<string>TM_LUAC</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>source.lua</string>
 	<key>uuid</key>
 	<string>E2D1F434-A472-4185-9933-4D9408C6C4D0</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

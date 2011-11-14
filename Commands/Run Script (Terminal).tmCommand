@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
@@ -8,9 +8,6 @@
 	<string>#!/bin/bash
 [[ -z "$TM_FILEPATH" ]] &amp;&amp; TM_TMPFILE=$(mktemp -t pythonInTerm)
 : "${TM_FILEPATH:=$TM_TMPFILE}"; cat &gt;"$TM_FILEPATH"
-
-: ${TM_LUA:=lua}
-require_cmd "$TM_LUA"
 
 esc () {
 STR="$1" ruby &lt;&lt;"RUBY"
@@ -25,7 +22,7 @@ osascript &lt;&lt;- APPLESCRIPT
 	tell app "Terminal"
 	    launch
 	    activate
-	    do script "clear; cd $(esc "${TM_DIRECTORY}"); $(esc "${TM_LUA}") $(esc "${TM_FILEPATH}"); rm -f $(esc "${TM_TMPFILE}")"
+	    do script "clear; cd $(esc "${TM_DIRECTORY}"); $(esc "${TM_LUA:-lua}") $(esc "${TM_FILEPATH}"); rm -f $(esc "${TM_TMPFILE}")"
 	    set position of first window to { 100, 100 }
 	end tell
 APPLESCRIPT
@@ -33,15 +30,37 @@ APPLESCRIPT
 </string>
 	<key>input</key>
 	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@R</string>
 	<key>name</key>
 	<string>Run Script (Terminal)</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>discard</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>lua</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/lua</string>
+				<string>/usr/local/bin/lua</string>
+			</array>
+			<key>variable</key>
+			<string>TM_LUA</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>source.lua</string>
 	<key>uuid</key>
 	<string>C7B74C19-5DB5-47A1-A148-3A1019EF4D96</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
