@@ -236,6 +236,18 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>\b([A-Za-z_]\w*)\b(?=\s*(?:[({"']|\[\[))</string>
+			<key>name</key>
+			<string>support.function.any-method.lua</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;=[^.]\.|:)\b([A-Za-z_]\w*)</string>
+			<key>name</key>
+			<string>variable.other.lua</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>\+|-|%|#|\*|\/|\^|==?|~=|&lt;=?|&gt;=?|(?&lt;!\.)\.{2}(?!\.)</string>
 			<key>name</key>
 			<string>keyword.operator.lua</string>
