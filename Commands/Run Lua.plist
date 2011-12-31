@@ -7,8 +7,18 @@
 	<key>command</key>
 	<string>#!/usr/bin/env bash
 [[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+[[ -f "${TM_SUPPORT_PATH}/lib/html.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/html.sh"
 
-"${TM_LUA:-lua}" "$TM_FILEPATH"|pre</string>
+htmlHeader $TM_FILEPATH
+
+# instad of using pre from bash_init.sh "${TM_LUA:-lua}" "$TM_FILEPATH" 2&gt;&amp;1|pre
+# preformat stderr with separate pipe so it is wrapped with error class
+echo -n '&lt;pre style="word-wrap: break-word;"&gt;'
+( ( "${TM_LUA:-lua}" "$TM_FILEPATH" | perl -pe '$| = 1; s/&amp;/&amp;amp;/g; s/&lt;/&amp;lt;/g; s/&gt;/&amp;gt;/g; s/$\\n/&lt;br&gt;/' ) 3&gt;&amp;1 1&gt;&amp;2 2&gt;&amp;3 | perl -pe '$| = 1; s/&amp;/&amp;amp;/g; s/&lt;/&amp;lt;/g; s/&gt;/&amp;gt;/g; s/^/&lt;span class="error"&gt;/; s/$\\n/&lt;\/span&gt;&lt;br&gt;/' ) 2&gt;&amp;1
+echo '&lt;/pre&gt;'
+
+htmlFooter
+</string>
 	<key>input</key>
 	<string>none</string>
 	<key>inputFormat</key>
