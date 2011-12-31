@@ -230,7 +230,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(and|or)\b</string>
+			<string>\b(and|or|not)\b</string>
 			<key>name</key>
 			<string>keyword.operator.lua</string>
 		</dict>
