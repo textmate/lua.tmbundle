@@ -58,6 +58,8 @@ APPLESCRIPT
 	</array>
 	<key>scope</key>
 	<string>source.lua</string>
+	<key>semanticClass</key>
+	<string>process.external.run.lua</string>
 	<key>uuid</key>
 	<string>C7B74C19-5DB5-47A1-A148-3A1019EF4D96</string>
 	<key>version</key>

@@ -49,6 +49,8 @@ htmlFooter
 	</array>
 	<key>scope</key>
 	<string>source.lua</string>
+	<key>semanticClass</key>
+	<string>process.run.script.lua</string>
 	<key>uuid</key>
 	<string>BF303CAC-FF2B-4299-8F2B-C84FE64B5146</string>
 	<key>version</key>
