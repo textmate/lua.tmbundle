@@ -3,21 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
-	<string>saveActiveFile</string>
+	<string>saveModifiedFiles</string>
 	<key>command</key>
-	<string>#!/usr/bin/env bash
-[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
-[[ -f "${TM_SUPPORT_PATH}/lib/html.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/html.sh"
+	<string>#!/usr/bin/env ruby -wKU
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/escape"
+require "#{ENV['TM_SUPPORT_PATH']}/lib/tm/save_current_document"
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/tm/executor"
 
-htmlHeader $TM_FILEPATH
-
-# instad of using pre from bash_init.sh "${TM_LUA:-lua}" "$TM_FILEPATH" 2&gt;&amp;1|pre
-# preformat stderr with separate pipe so it is wrapped with error class
-echo -n '&lt;pre style="word-wrap: break-word;"&gt;'
-( ( "${TM_LUA:-lua}" "$TM_FILEPATH" | perl -pe '$| = 1; s/&amp;/&amp;amp;/g; s/&lt;/&amp;lt;/g; s/&gt;/&amp;gt;/g; s/$\\n/&lt;br&gt;/' ) 3&gt;&amp;1 1&gt;&amp;2 2&gt;&amp;3 | perl -pe '$| = 1; s/&amp;/&amp;amp;/g; s/&lt;/&amp;lt;/g; s/&gt;/&amp;gt;/g; s/^/&lt;span class="error"&gt;/; s/$\\n/&lt;\/span&gt;&lt;br&gt;/' ) 2&gt;&amp;1
-echo '&lt;/pre&gt;'
-
-htmlFooter
+TextMate.save_if_untitled('lua')
+TextMate::Executor.run(e_sh(ENV['TM_LUA']), ENV['TM_FILEPATH'], :version_args =&gt; '-v', :version_regex =&gt; /(\w+ [\d.]+).*/)
 </string>
 	<key>input</key>
 	<string>none</string>
