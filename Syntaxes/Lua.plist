@@ -8,6 +8,8 @@
 	<array>
 		<string>lua</string>
 	</array>
+	<key>firstLineMatch</key>
+	<string>\A#!.*?\blua\b</string>
 	<key>keyEquivalent</key>
 	<string>^~L</string>
 	<key>name</key>
