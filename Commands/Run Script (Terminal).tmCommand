@@ -10,7 +10,7 @@
 : "${TM_FILEPATH:=$TM_TMPFILE}"; cat &gt;"$TM_FILEPATH"
 
 esc () {
-STR="$1" /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby &lt;&lt;"RUBY"
+STR="$1" ruby18 &lt;&lt;"RUBY"
    str = ENV['STR']
    str = str.gsub(/'/, "'\\\\''")
    str = str.gsub(/[\\"]/, '\\\\\\0')
