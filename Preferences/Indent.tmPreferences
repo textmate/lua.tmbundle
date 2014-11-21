@@ -9,7 +9,7 @@
 	<key>settings</key>
 	<dict>
 		<key>decreaseIndentPattern</key>
-		<string>^\s*(elseif|else|end|\})\s*$</string>
+		<string>^\s*(elseif|else|end,?|\}\)?)\s*$</string>
 		<key>increaseIndentPattern</key>
 		<string>\b(else|elseif|(local\s+)?function|then|do|repeat)\b((?!end).)*$|\{\s*$</string>
 	</dict>
