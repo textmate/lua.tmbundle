@@ -9,7 +9,7 @@
 		<string>lua</string>
 	</array>
 	<key>firstLineMatch</key>
-	<string>\A#!.*?\blua(\d+(\.\d+)?)?\b</string>
+	<string>\A#!.*?\blua(\d+(\.\d+)?)?\b|\A--\s+-\*-\s*lua\s*-\*-</string>
 	<key>keyEquivalent</key>
 	<string>^~L</string>
 	<key>name</key>
