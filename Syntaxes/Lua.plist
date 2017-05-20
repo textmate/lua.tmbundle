@@ -7,6 +7,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>lua</string>
+		<string>p8</string>
 	</array>
 	<key>firstLineMatch</key>
 	<string>\A#!.*?\blua(\d+(\.\d+)?)?\b|\A--\s+-\*-\s*lua\s*-\*-</string>
