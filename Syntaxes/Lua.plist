@@ -301,9 +301,27 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\\(\d{1,3}|[abfnrtv\\"'])</string>
+					<string>\\[abfnrtvz\\"'\n]</string>
 					<key>name</key>
 					<string>constant.character.escape.lua</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\\\d{1,3}</string>
+					<key>name</key>
+					<string>constant.character.escape.byte.lua</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\\x\h\h</string>
+					<key>name</key>
+					<string>constant.character.escape.byte.lua</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\\u\{\h+\}</string>
+					<key>name</key>
+					<string>constant.character.escape.unicode.lua</string>
 				</dict>
 				<dict>
 					<key>match</key>
