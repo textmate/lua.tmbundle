@@ -19,20 +19,25 @@
 	<array>
 		<dict>
 			<key>begin</key>
-			<string>\b(function)\s*(\s+[a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)*(:[a-zA-Z_][a-zA-Z0-9_]*)?\s*)?(\()</string>
+			<string>\b((local\b)\s+)?(function)\s*(\s+[a-zA-Z_][a-zA-Z0-9_]*(\.[a-zA-Z_][a-zA-Z0-9_]*)*(:[a-zA-Z_][a-zA-Z0-9_]*)?\s*)?(\()</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
+					<string>storage.modifier.local.lua</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
 					<string>keyword.control.lua</string>
 				</dict>
-				<key>2</key>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.lua</string>
 				</dict>
-				<key>3</key>
+				<key>5</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.begin.lua</string>
