@@ -67,9 +67,27 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;![\d.])\s0x[a-fA-F\d]+|\b\d+(\.\d+)?([eE]-?\d+)?|\.\d+([eE]-?\d+)?</string>
+			<string>(?&lt;![\w\d.])0[xX]\h+(?![pPeE.0-9])</string>
 			<key>name</key>
-			<string>constant.numeric.lua</string>
+			<string>constant.numeric.integer.hexadecimal.lua</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;![\w\d.])0[xX]\h+(\.\h+)?([eE]-?\d*)?([pP][-+]\d+)?</string>
+			<key>name</key>
+			<string>constant.numeric.float.hexadecimal.lua</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;![\w\d.])\d+(?![pPeE.0-9])</string>
+			<key>name</key>
+			<string>constant.numeric.integer.lua</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?&lt;![\w\d.])\d+(\.\d+)?([eE]-?\d*)?</string>
+			<key>name</key>
+			<string>constant.numeric.float.lua</string>
 		</dict>
 		<dict>
 			<key>begin</key>
