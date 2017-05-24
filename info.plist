@@ -7,7 +7,7 @@
 	<key>contactName</key>
 	<string>Paul Bissex</string>
 	<key>description</key>
-	<string>Support the &lt;a href="http://www.lua.org/"&gt;Lua&lt;/a&gt; programming language, ideal for use as an embedded scripting language.</string>
+	<string>A powerful, efficient, lightweight, embeddable scripting language.</string>
 	<key>mainMenu</key>
 	<dict>
 		<key>items</key>
