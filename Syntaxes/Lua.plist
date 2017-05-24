@@ -217,6 +217,20 @@
 			<string>string.quoted.other.multiline.lua</string>
 		</dict>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.lua</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>\A(#!).*$\n?</string>
+			<key>name</key>
+			<string>comment.line.shebang.lua</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>(^[ \t]+)?(?=--)</string>
 			<key>beginCaptures</key>
