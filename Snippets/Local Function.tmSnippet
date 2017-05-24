@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>function ${1:function_name}(${2:...})
-	${0:-- body}
+	<string>local function ${1:function_name} (${2:...})
+	${0:-- body...}
 end</string>
 	<key>name</key>
-	<string>Function</string>
+	<string>Local Function</string>
 	<key>scope</key>
 	<string>source.lua</string>
 	<key>tabTrigger</key>
-	<string>fun</string>
+	<string>lfun</string>
 	<key>uuid</key>
-	<string>3E0EEDB8-2C15-4703-939B-9334714B3A8E</string>
+	<string>C22ACE57-4FFD-406A-B163-3F13B98DFFF7</string>
 </dict>
 </plist>

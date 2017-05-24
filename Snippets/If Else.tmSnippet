@@ -3,16 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>function ${1:function_name}(${2:...})
-	${0:-- body}
+	<string>if ${1:value} then
+	${0:--body...}
+else
+	${1:--body...}
 end</string>
 	<key>name</key>
-	<string>Function</string>
+	<string>If Else</string>
 	<key>scope</key>
 	<string>source.lua</string>
 	<key>tabTrigger</key>
-	<string>fun</string>
+	<string>ife</string>
 	<key>uuid</key>
-	<string>3E0EEDB8-2C15-4703-939B-9334714B3A8E</string>
+	<string>D00AE561-8562-46F5-9AEF-A808D03BE80D</string>
 </dict>
 </plist>

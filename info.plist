@@ -17,20 +17,47 @@
 			<string>------------------------------------</string>
 			<string>E2D1F434-A472-4185-9933-4D9408C6C4D0</string>
 			<string>------------------------------------</string>
+			<string>3E0EEDB8-2C15-4703-939B-9334714B3A8E</string>
+			<string>C22ACE57-4FFD-406A-B163-3F13B98DFFF7</string>
+			<string>F54C30F3-C71C-4492-BFF9-F2259ACD4CDD</string>
+			<string>------------------------------------</string>
 			<string>0CEE4504-F8F1-4A98-AC7B-AA679CAAAB55</string>
 			<string>------------------------------------</string>
-			<string>082D9465-0CEF-40DB-9B1C-34940D38F4F0</string>
-			<string>A75263F5-C971-42F2-8FAC-83829AD945DE</string>
-			<string>B1FDD74B-F037-45B7-AA61-7CB56BFA67CD</string>
-			<string>------------------------------------</string>
-			<string>3E0EEDB8-2C15-4703-939B-9334714B3A8E</string>
-			<string>F4A541EB-8C83-4EFB-97A7-F780807AC23A</string>
+			<string>9320D4BD-81ED-493E-94AA-CC1FB8E8B28E</string>
+			<string>A25599C6-3D2E-49CE-92B8-9F84D42D9B5F</string>
 			<string>------------------------------------</string>
 			<string>2052FA2D-5830-4665-8C90-01D0C7E04991</string>
 			<string>8E68AA99-64F4-4D36-AF80-D7D0B3DCD041</string>
 		</array>
 		<key>submenus</key>
-		<dict/>
+		<dict>
+            <key>A25599C6-3D2E-49CE-92B8-9F84D42D9B5F</key>
+            <dict>
+                <key>items</key>
+                <array>
+                    <string>082D9465-0CEF-40DB-9B1C-34940D38F4F0</string>
+                    <string>A75263F5-C971-42F2-8FAC-83829AD945DE</string>
+                    <string>B1FDD74B-F037-45B7-AA61-7CB56BFA67CD</string>
+                    <string>------------------------------------</string>
+                    <string>C7E7105F-6FF1-46AF-8450-CDEF50AED91D</string>
+                    <string>09F0985B-1B6C-4F46-8F95-B75D28F14813</string>
+                </array>
+                <key>name</key>
+                <string>Loops</string>
+            </dict>
+            <key>9320D4BD-81ED-493E-94AA-CC1FB8E8B28E</key>
+            <dict>
+                <key>items</key>
+                <array>
+                	<string>2C7111A3-4DEB-4C89-89DF-CE0D9D0EA4E6</string>
+                	<string>D00AE561-8562-46F5-9AEF-A808D03BE80D</string>
+                	<string>B2174696-29AD-459B-8849-C69C65A7E48E</string>
+                	<string>D6B8865A-AAA8-4CC9-8139-AB8BDC801D9F</string>
+                </array>
+                <key>name</key>
+                <string>Conditionals</string>
+            </dict>
+		</dict>
 	</dict>
 	<key>name</key>
 	<string>Lua</string>
