@@ -218,23 +218,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>--\[(=*)\[</string>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.lua</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>\]\1\]</string>
-			<key>name</key>
-			<string>comment.block.lua</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>(^[ \t]+)?(?=--(?!\[\[))</string>
+			<string>(^[ \t]+)?(?=--)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -244,9 +228,41 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?!\G)</string>
+			<string>(?!\G)((?!^)[ \t]+\n)?</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.whitespace.comment.trailing.lua</string>
+				</dict>
+			</dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>begin</key>
+					<string>--\[(=*)\[</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.begin.lua</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\]\1\]</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.end.lua</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>comment.block.lua</string>
+				</dict>
 				<dict>
 					<key>begin</key>
 					<string>--</string>
