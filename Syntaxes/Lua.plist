@@ -9,8 +9,6 @@
 		<string>lua</string>
 		<string>p8</string>
 		<string>rockspec</string>
-		<string>luacheckrc</string>
-		<string>lakefile</string>
 	</array>
 	<key>firstLineMatch</key>
 	<string>\A#!.*?\blua(\d+(\.\d+)?)?\b|\A--\s+-\*-\s*lua\s*-\*-</string>
@@ -70,13 +68,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;![\w\d.])0[xX]\h+(?![pPeE.0-9])</string>
+			<string>(?&lt;![\w\d.])0[xX][0-9A-Fa-f]+(?![pPeE.0-9])</string>
 			<key>name</key>
 			<string>constant.numeric.integer.hexadecimal.lua</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?&lt;![\w\d.])0[xX]\h+(\.\h+)?([eE]-?\d*)?([pP][-+]\d+)?</string>
+			<string>(?&lt;![\w\d.])0[xX][0-9A-Fa-f]+(\.[0-9A-Fa-f]+)?([eE]-?\d*)?([pP][-+]\d+)?</string>
 			<key>name</key>
 			<string>constant.numeric.float.hexadecimal.lua</string>
 		</dict>
@@ -409,13 +407,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\\x\h\h</string>
+					<string>\\x[0-9A-Fa-f][0-9A-Fa-f]</string>
 					<key>name</key>
 					<string>constant.character.escape.byte.lua</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\\u\{\h+\}</string>
+					<string>\\u\{[0-9A-Fa-f]+\}</string>
 					<key>name</key>
 					<string>constant.character.escape.unicode.lua</string>
 				</dict>
